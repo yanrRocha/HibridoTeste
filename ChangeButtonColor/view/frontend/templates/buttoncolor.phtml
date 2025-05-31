@@ -1,0 +1,15 @@
+<?php
+/** @var \Hibrido\ChangeButtonColor\Block\ChangeButtonColor $block */
+
+$isEnabled = $this->getModuleIsEnabled();
+$color = $block->getColor();
+?>
+
+<?php if ($isEnabled): ?>
+    <style>
+        button.action {
+            background: <?php echo $color; ?> !important;
+            border-color: <?php echo $color; ?> !important
+        }
+    </style>
+<?php endif; ?>

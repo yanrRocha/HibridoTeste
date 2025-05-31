@@ -1,0 +1,19 @@
+<?php
+/** @var \Hibrido\MetaTagMultiSite\Block\MetaTagMultiSite $block */
+
+$isEnabled = $block->getModuleIsEnabled();
+$isCmsPage = $block->getIsCmsPage();
+if ($isCmsPage && $isEnabled) {
+    $stores = $block->getStores();
+    $baseUrl = $block->getBaseUrl();
+    $cmsPageUrl = $block->getCmsUrlKey();
+}
+?>
+
+<?php if ($isCmsPage && $isEnabled): ?>
+    <?php foreach ($stores as $key => $store) : ?>
+        <?php if (in_array($store->getId(), $block->getCmsPageStores())): ?>
+            <link rel="alternate" hreflang="<?= $store->getCode() ?>" href="<?= $_SERVER['SERVER_NAME'] . '/' . $store->getCode() . $cmsPageUrl?>">
+        <?php endif; ?>
+    <?php endforeach; ?>
+<?php endif; ?>

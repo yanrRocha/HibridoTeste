@@ -1,0 +1,8 @@
+<page xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+      xsi:noNamespaceSchemaLocation="urn:magento:framework:View/Layout/etc/page_configuration.xsd">
+    <body>
+        <referenceContainer name="header.container">
+            <block class="Hibrido\MetaTagMultiSite\Block\MetaTagMultiSite" name="metatag-multisite" template="Hibrido_MetaTagMultiSite::metatag.phtml" />
+        </referenceContainer>
+    </body>
+</page>
